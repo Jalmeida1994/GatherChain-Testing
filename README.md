@@ -27,7 +27,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/Jalmeida1994/GatherChain-Testing>
+  <a href="https://github.com/Jalmeida1994/GatherChain-Testing">
     <img src="images/Logo-02.png" alt="Logo" width="120">
   </a>
 
