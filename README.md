@@ -19,7 +19,6 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -65,9 +64,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -99,11 +95,10 @@ This repository just hosts the stress and usability tests of the GatherChain sol
 <!-- GETTING STARTED -->
 ## Getting Started
 
-In this section it'll be shown how to get started with the testing. It is fixed the Azure cloud as the cloud environment for the solution. All the commands were tested with Azure.
+In this section it'll be shown how to get started with the Stress Tests.
 ### Prerequisites
 
-* [Azure Subscription](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription)
-* [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+* [GatherChain ARM Template deployed](https://github.com/Jalmeida1994/GatherChain-ARM-Template)
 
 ### Installation
 
@@ -111,64 +106,39 @@ In this section it'll be shown how to get started with the testing. It is fixed 
    ```
    git clone https://github.com/Jalmeida1994/GatherChain-Testing.git
    ```
-2. Change the parameters in [azuredeploy.parameters.json](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/azuredeploy.parameters.json) to your needs;
+2. Change the parameters in [.weburl.env](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/.weburl.env) to your web app url;
 
-4. Login to Azure in `az` if not logged yet
+3. Initialize the blockchain network if not already running with [`init.sh`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/commands/init.sh)
    ```
-   az login
-   ```
-5. Create the resource group (list of locations available with `az account list-locations -o table`)
-   ```
-   az group create --name ${resourcegroup_name} --location ${location}
-   ```
-6. Deploy ARM template to the previously created resource group
-   ```
-    az deployment group create --resource-group ${resourcegroup_name} --template-file azuredeploy.json --parameters azuredeploy.parameters.json
+   ./commands/init.sh
    ```
    
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+### Testing
+In testing is leveraged the `time` function. To know more check the following [link](https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1/556411#556411).
 
-After the template is deployed to your cloud provider of choice or on premises infraestructure, you should start the blockchain network using the admin commands found in the [GatherChain Admin Commands](https://github.com/Jalmeida1994/GatherChain-AdminCommands).
-
-_For more information, please refer to the [Documentation](https://github.com/Jalmeida1994/GatherChain-AdminCommands/blob/master/README.md)_
-
+1. To test the [`test1.sh`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/commands/.test1.sh) that consists in 3 users registrations, 1 group creation and some commit pushes, in a sequencial order
+   ```
+   time ./commands/test1.sh
+   ```
+5. To test the [`test2.sh`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/commands/.test2.sh) that consists in 6 users registrations, 2 group creation and more commit pushes, in a sequencial order
+   ```
+   time ./commands/test2.sh
+   ```
+6. To test the [`test3.sh`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/commands/.test3.sh) that consists in 6 users registrations, 2 group creation and even more commit pushes, in a parallel order
+   ```
+   time ./commands/test3.sh
+   ```
 
 <!-- USAGE EXAMPLES -->
 ### Cleanup
 
-To delete all the resources created use the `az group delete` command
-   ```
-    az group delete --name ${resourcegroup_name} -y
-   ```
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/Jalmeida1994/GatherChain-Testing/issues) for a list of proposed features (and known issues).
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
+To clear all solution (blockchain network and cache) use [`clear.sh`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/commands/clear.sh)
+    ```
+    ./commands/clear.sh
+    ```
 
 
 <!-- CONTACT -->
@@ -196,8 +166,6 @@ Project Link: [https://github.com/Jalmeida1994/GatherChain-Testing](https://gith
 [stars-url]: https://github.com/Jalmeida1994/GatherChain-Testing/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Jalmeida1994/GatherChain-Testing.svg?style=for-the-badge
 [issues-url]: https://github.com/Jalmeida1994/GatherChain-Testing/issues
-[license-shield]: https://img.shields.io/github/license/Jalmeida1994/GatherChain-Testing.svg?style=for-the-badge
-[license-url]: https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jo%C3%A3o-almeida-525476125/
 [product-screenshot]: images/arm-template.png
