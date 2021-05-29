@@ -106,7 +106,11 @@ In this section it'll be shown how to get started with the Stress Tests.
    ```
    git clone https://github.com/Jalmeida1994/GatherChain-Testing.git
    ```
-2. Change the parameters in [.weburl.env](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/.weburl.env) to your web app url;
+2. Change the [`weburl.env`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/.weburl.env) file with the URL of the WebApp instantiated during the GatherChain ARM Template phase.
+    ```
+    export WEB_URL=https://NameOfTheApp.azurewebsites.net
+    ```
+    The domain `azurewebsites` is only used if the GatherChain Template was deployed in Azure and if no custom domain was configured in the webapp.
 
 3. Initialize the blockchain network if not already running with [`init.sh`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/commands/init.sh)
    ```
