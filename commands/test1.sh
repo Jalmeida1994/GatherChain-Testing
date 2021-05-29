@@ -2,9 +2,8 @@
 
 source .weburl.env
 
-users=(101 202 303 404 505 606)
+users=(101 202 303)
 group1="101-202-303"
-group2="404-505-606"
 
 # Generates Random Hash pretending to be a git commit hash
 randomHash() {
@@ -57,18 +56,25 @@ registerNumber ${users[0]} 0
 registerNumber ${users[1]} 0
 registerNumber ${users[2]} 0
 
+startGrp=$(date +%s)
 createGroup ${users[0]} ${group1}
+endGrp=$(date +%s)
 
 pushCommit ${users[0]} ${group1}
 pushCommit ${users[1]} ${group1}
 pushCommit ${users[0]} ${group1}
-startPush=`date +%s.%N`
+startPush=$(date +%s)
 pushCommit ${users[2]} ${group1}
-endPush=`date +%s.%N`
+endPush=$(date +%s)
 
-
+startHistory=$(date +%s)
 getHistory ${group1}
+endHistory=$(date +%s)
 
-pushRuntime=$( echo "$endPush - $startPush" )
+groupCreationRuntime=$(echo "$endGrp - $startGrp" | bc)
+pushRuntime=$(echo "$endPush - $startPush" | bc)
+historyRuntime=$(echo "$endHistory - $startHistory" | bc)
 
+echo "Group Creation Duration: ${groupCreationRuntime}"
 echo "Push Duration: ${pushRuntime}"
+echo "Get History Duration: ${historyRuntime}"
