@@ -2,9 +2,9 @@
 
 source .weburl.env
 
-users=(101 202 303 404 505 606)
-group1="101-202-303"
-group2="404-505-606"
+users=(101 202 303)
+group="101-202-303"
+
 
 # Generates Random Hash pretending to be a git commit hash
 randomHash() {
@@ -57,32 +57,11 @@ registerNumber ${users[0]} 0
 registerNumber ${users[1]} 0
 registerNumber ${users[2]} 0
 
-registerNumber ${users[3]} 0
-registerNumber ${users[4]} 0
-registerNumber ${users[5]} 0
-
 createGroup ${users[0]} ${group1}
 
-createGroup ${users[3]} ${group2}
-
-pushCommit ${users[0]} ${group1}
-pushCommit ${users[1]} ${group1}
-pushCommit ${users[3]} ${group2}
-pushCommit ${users[2]} ${group1}
-pushCommit ${users[0]} ${group1}
-pushCommit ${users[5]} ${group2}
-pushCommit ${users[4]} ${group2}
-pushCommit ${users[2]} ${group1}
-pushCommit ${users[3]} ${group2}
-pushCommit ${users[1]} ${group1}
-pushCommit ${users[0]} ${group1}
-pushCommit ${users[5]} ${group2}
-
-echo "-----------History Group 1------------------"
-
-getHistory ${group1}
-
-echo "-----------History Group 2------------------"
-
-getHistory ${group2}
-
+for ((i = 0 ; i <= ${1} ; i++)); do
+    echo "Commit Nr: $i"
+    user=$(jot -r 1  0 2)
+    echo ${users[${user}]}
+    pushCommit ${users[${user}]} ${group}
+done
