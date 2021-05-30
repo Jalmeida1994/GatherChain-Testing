@@ -38,6 +38,7 @@ createGroup ()  {
     done 
 }
 
+# Pushes the random hash to the blockchain network
 pushCommit () {
     hash=$(randomHash)
 
@@ -48,6 +49,7 @@ pushCommit () {
     fi;
 }
 
+# Gets transaction history from the network
 getHistory () {
     curl --fail -X POST -H "Content-Type: application/json" -d "{\"Author\":\"0000\",\"Group\":\"${1}\",\"Commit\":\"0000\"}" ${WEB_URL}/history
 }

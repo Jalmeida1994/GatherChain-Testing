@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Arg 1: the number of commits to be pushed to the blockchain;
+
 source .weburl.env
 
 users=(101 202 303)
@@ -39,6 +41,7 @@ createGroup ()  {
     done 
 }
 
+# Pushes the random hash to the blockchain network
 pushCommit () {
     hash=$(randomHash)
 
@@ -49,6 +52,7 @@ pushCommit () {
     fi;
 }
 
+# Gets transaction history from the network
 getHistory () {
     curl --fail -X POST -H "Content-Type: application/json" -d "{\"Author\":\"0000\",\"Group\":\"${1}\",\"Commit\":\"0000\"}" ${WEB_URL}/history
 }
@@ -61,7 +65,8 @@ createGroup ${users[0]} ${group1}
 
 for ((i = 0 ; i <= ${1} ; i++)); do
     echo "Commit Nr: $i"
-    user=$(jot -r 1  0 2)
-    echo ${users[${user}]}
-    pushCommit ${users[${user}]} ${group}
+    user=$(jot -r 1  0 2) # Random Number between 0 and 2
+    pushCommit ${users[${user}]} ${group} # Gets the user with random position from the users array and pushes the hash 
 done
+
+getHistory ${group}
