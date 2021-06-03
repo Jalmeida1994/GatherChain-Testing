@@ -134,16 +134,14 @@ In testing is leveraged the `time` function. To know more check the following [l
 6. To test the [`test3.sh`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/commands/.test3.sh) that consists in 6 users registrations, 2 group creation and even more commit pushes, in a parallel order
    ```
    time ./commands/test3.sh
-   ```
 
 <!-- USAGE EXAMPLES -->
 ### Cleanup
 
 To clear all solution (blockchain network and cache) use [`clear.sh`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/commands/clear.sh)
-    ```
-    ./commands/clear.sh
-    ```
-
+   ```
+   ./commands/clear.sh
+   ```
 
 <!-- CONTACT -->
 ## Contact
