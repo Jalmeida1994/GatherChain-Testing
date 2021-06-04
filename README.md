@@ -114,7 +114,7 @@ In this section it'll be shown how to get started with the Stress Tests.
 
 3. Initialize the blockchain network if not already running with [`init.sh`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/commands/init.sh)
    ```
-   ./commands/init.sh
+   ./commands/init.sh ${adminPassword}
    ```
    
 
