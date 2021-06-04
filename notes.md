@@ -6,7 +6,7 @@ real    22m34s
 ## init 
 
 ### Times
-real    9m51s
+real    7m21s
 
 ## clear
 
@@ -74,6 +74,9 @@ real    5m11.921s
 
 ## test3
 
-### Times
+__Error: 502 Bad Gateway__
 
-### History
+This problem is often caused by application level issues, such as:
+- requests taking a long time
+- application using high memory/CPU
+- application crashing due to an exception.
