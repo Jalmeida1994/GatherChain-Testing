@@ -134,6 +134,12 @@ In testing is leveraged the `time` function. To know more check the following [l
 6. To test the [`test3.sh`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/commands/.test3.sh) that consists in 6 users registrations, 2 group creation and even more commit pushes, in a parallel order
    ```
    time ./commands/test3.sh
+   ```
+
+7. To test the [`test4.sh`](https://github.com/Jalmeida1994/GatherChain-Testing/blob/master/commands/.test4.sh) that consists in 3 users registrations, 1 group creation and a variable number of commit pushes (randomly distributed by the 3 users) received as an argument by the function, in a sequencial order
+   ```
+   time ./commands/test4.sh ${numberOfCommits}
+   ```
 
 <!-- USAGE EXAMPLES -->
 ### Cleanup
