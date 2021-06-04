@@ -86,6 +86,7 @@ pushCommit ${users[1]} ${group1} &
 pushCommit ${users[0]} ${group1} &
 pushCommit ${users[0]} ${group1} &
 wait
+
 echo "-----------History Group 1------------------"
 
 getHistory ${group1}
