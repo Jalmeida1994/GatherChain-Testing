@@ -7,7 +7,7 @@ __Nr of participants__: 27
 _Age_; _Sex_; _Profency with computers_; _Experience with programmimg_; _Experience with VCS_;
 
 - 18; M; 4; 4; 2;
-- 18; F; 4; 1; 1;
+- 19; F; 4; 1; 1;
 - 22; M; 4; 4; 4;
 - 22; M; 4; 4; 3;
 - 22; M; 5; 5; 4;
