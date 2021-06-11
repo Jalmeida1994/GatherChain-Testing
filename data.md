@@ -1,6 +1,6 @@
 # Data Gathered in Usability Tests
 
-__Nr of participants__: 27
+__Nr of participants__: 25
 
 ## Demography:
 
@@ -60,6 +60,8 @@ _Age_; _Sex_; _Profency with computers_; _Experience with programmimg_; _Experie
 - 107
 - 110
 
+__AVG__= 109.16
+
 ## Task 2 (seconds):
 
 - 36
@@ -88,6 +90,8 @@ _Age_; _Sex_; _Profency with computers_; _Experience with programmimg_; _Experie
 - 39
 - 34
 
+__AVG__= 35.76
+
 ## Task 3 (seconds):
 
 - 16
@@ -115,6 +119,8 @@ _Age_; _Sex_; _Profency with computers_; _Experience with programmimg_; _Experie
 - 18
 - 19
 - 16
+
+ __AVG__= 16.4
 
 
 ## Task 4 (seconds):
@@ -145,6 +151,8 @@ _Age_; _Sex_; _Profency with computers_; _Experience with programmimg_; _Experie
 - 23
 - 19
 
+__AVG__= 21.04
+
 ## Task 5 (seconds):
 
 - 26
@@ -173,6 +181,8 @@ _Age_; _Sex_; _Profency with computers_; _Experience with programmimg_; _Experie
 - 26
 - 29
 
+__AVG__= 27.48
+
 ## Task 6 (seconds):
 
 - 78
@@ -200,3 +210,35 @@ _Age_; _Sex_; _Profency with computers_; _Experience with programmimg_; _Experie
 - 87
 - *
 - 67
+
+__AVG__= 76.6
+
+## SUS Scoring
+
+- 31
+- 33
+- 30
+- 30
+- 31
+- 30
+- 30
+- 31
+- 31
+- 30
+- 30
+- 30
+- 29
+- 33
+- 32
+- 30
+- 32
+- 30
+- 30
+- 33
+- 32
+- 33
+- 30
+- 30
+- 31
+
+__AVG__= 30.88
